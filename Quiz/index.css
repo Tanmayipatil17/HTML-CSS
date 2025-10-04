@@ -1,0 +1,169 @@
+
+/* ========================
+   Mobile-first style.css
+   ======================== */
+
+/* ---------- CSS VARIABLES (colors & spacing) ---------- */
+:root{
+  --bg: #faf9fc;
+  --card: #ffffff;
+  --muted: #666666;
+  --accent: #8A2C6A;
+  --accent-2: #C76BA0;
+  --nav-grad: linear-gradient(90deg,#8A2C6A 0%, #C76BA0 100%);
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --focus: 3px solid rgba(135,44,106,0.15);
+  --radius: 12px;
+  --gap: 16px;
+  --max-width: 1200px;
+}
+
+/* ---------- Base reset & typography ---------- */
+*,
+*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Utility */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:var(--gap);
+  display:block;
+}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* Skip link */
+.skip-link{position:absolute;left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem .75rem;border-radius:6px;z-index:999;transform:translateY(-120%);transition:transform .2s}
+.skip-link:focus{transform:translateY(0)}
+
+/* ---------- Header & Nav (gradient background) ---------- */
+.site-header{background:var(--nav-grad);color:#fff}
+.header-inner{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px var(--gap)}
+.site-title{font-family:"Merriweather", serif;font-weight:700;font-size:1.25rem;line-height:1}
+
+.main-nav{width:100%;max-width:var(--max-width)}
+.nav-list{list-style:none;display:flex;flex-direction:column;gap:8px;align-items:center;padding:0;margin:0}
+.nav-list a{color:#fff;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;display:inline-block}
+.nav-list a:focus{outline:var(--focus)}
+.nav-list a:hover{background:rgba(255,255,255,0.08)}
+
+/* ---------- Hero (bg image + overlay + animation) ---------- */
+.hero{
+  min-height:42vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-image:
+    linear-gradient(rgba(137, 36, 238, 0.45), rgba(229, 66, 229, 0.45));
+  color:#fff;
+  padding:48px 16px;
+}
+
+.hero-content{max-width:900px;animation:fadeInUp .9s ease both}
+.hero-title{font-family:"Merriweather", serif;font-weight:700;font-size:1.6rem;margin-bottom:8px}
+.hero-sub{font-size:1rem;margin-bottom:14px}
+.hero-cta{display:inline-block;background:var(--accent);color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;font-weight:600}
+.hero-cta:focus{outline:var(--focus)}
+
+/* Fade-in animation */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+
+/* ---------- Main layout: mobile-first stack ---------- */
+.site-main{flex:1}
+.container{display:grid;grid-template-columns:1fr;gap:var(--gap)}
+
+/* featured section */
+.section-title{font-family:"Merriweather", serif;font-size:1.25rem;color:var(--accent);margin-bottom:8px}
+.featured-gifts{padding-bottom:8px}
+
+/* Product grid (mobile-first: 1 column) */
+.product-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.product-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:12px;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:transform .25s ease, box-shadow .25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.product-card img{width:100%;height:auto;border-radius:8px;transition:transform .25s ease;display:block}
+.product-card img:hover{transform:scale(1.03)} /* Slight image enlarge on hover */
+.product-name{font-weight:600;color:var(--accent);font-size:1rem}
+.price{font-weight:700;color:var(--accent-2)}
+.btn{background:var(--accent);color:#fff;padding:9px 12px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn:focus{outline:var(--focus)}
+.add-to-cart:hover{background:var(--accent-2)} /* Hover button color */
+
+/* Hover effect on card: lift up + shadow */
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+
+/* ---------- Sidebar (placed below on mobile by default) ---------- */
+.sidebar{background:#fff;border-radius:12px;padding:12px;border:1px solid rgba(0,0,0,0.04);font-style:italic}
+.sidebar-title{font-family:"Merriweather", serif;color:var(--accent);font-weight:700;margin-bottom:10px}
+.offer-card{background:linear-gradient(180deg,#fff,#fff);padding:10px;border-radius:10px;margin-bottom:10px;transition:background-color .35s ease;box-shadow:0 4px 10px rgba(0,0,0,0.04)}
+.offer-card:hover{background:#fff0f6}
+.festival-banner{background:#fff5fb;border:2px dashed var(--accent-2);padding:10px;border-radius:10px;margin-top:10px;font-weight:700}
+
+/* ---------- Footer ---------- */
+.site-footer{background:#f5e1f0;padding:18px;margin-top:16px;text-align:center;border-top:3px solid var(--accent);font-size:0.95rem}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;flex-direction:column;gap:10px;align-items:center;padding:0 var(--gap)}
+.footer-links a,.social-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.footer-links .sep,.social-links .sep{color:rgba(0,0,0,0.2);margin:0 6px}
+
+/* Newsletter input/button rounded */
+.newsletter-form{display:flex;gap:8px;align-items:center}
+.newsletter-form input[type="email"]{padding:8px 12px;border-radius:24px;border:1px solid rgba(0,0,0,0.08);min-width:160px}
+.newsletter-form .submit{border-radius:24px;padding:8px 14px;border:0;background:var(--accent);color:#fff;cursor:pointer;transition:background .25s ease}
+.newsletter-form .submit:hover{background:var(--accent-2)}
+
+/* ---------- Accessibility focus styles ---------- */
+a:focus,button:focus,input:focus{outline:none;box-shadow:var(--focus);border-radius:8px}
+
+/* ---------- Larger screens: 600px up → 2 columns; 900px up → 4 columns and sidebar right ---------- */
+/* At widths <=600px nav should be vertical (already vertical by default). We'll add explicit rule for <=600 to ensure stacking. */
+@media (max-width:600px){
+  .nav-list{flex-direction:column;align-items:stretch}
+  .nav-list a{padding:10px 14px;text-align:center}
+}
+
+/* Between 601px and 900px: 2-column products */
+@media (min-width:601px) and (max-width:900px){
+  .container{grid-template-columns: 1fr  (minmax(240px, 320px)); /* fallback, we'll use grid-template-columns directly below */ }
+  .container{grid-template-columns: 1fr 320px;align-items:start}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .sidebar{order:2}
+}
+
+/* At ≥901px: 4-column products; sidebar on right (desktop layout) */
+@media (min-width:901px){
+  .container{grid-template-columns:1fr 340px;gap:24px;align-items:start}
+  .product-grid{grid-template-columns:repeat(4,1fr)}
+  .nav-list{flex-direction:row;justify-content:center}
+}
+
+/* Ensure footer sticks to bottom: body is flex column with min-height:100vh; footer comes after main so it's at bottom when content short */
+
+/* Print tweaks (optional) */
+@media print{
+  .hero{background:none;color:#000}
+  .site-header,.site-footer{display:none}
+}

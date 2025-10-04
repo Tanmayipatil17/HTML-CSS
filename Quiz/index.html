@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Gift Shop – Quiz 2</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+  <!-- Accessible skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner" aria-label="Top of page">
+    <div class="header-inner">
+      <h1 class="site-title"> Giftify – Your E-Gift Shop</h1>
+
+      <!-- Nav -->
+      <nav class="main-nav" role="navigation" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="./home.html">Home</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./offers.html">Offers</a></li>
+          <li><a href="./cart.html">Cart</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero (background image + overlay + animated text) -->
+  <section class="hero" role="region" aria-label="Welcome banner">
+    <div class="hero-content">
+      <h2 class="hero-title">Welcome to Giftify</h2>
+      <p class="hero-sub">Handpicked e-gifts for every celebration — fast delivery & beautiful packaging.</p>
+      <a class="hero-cta" href="#products" role="button">Shop Featured Gifts</a>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main id="main" class="site-main" role="main">
+    <div class="container">
+
+      <!-- Featured Gifts -->
+      <section id="products" class="featured-gifts" aria-labelledby="featured-heading">
+        <h2 id="featured-heading" class="section-title">Featured Gifts</h2>
+
+        <div class="product-grid" role="list" aria-live="polite">
+          <!-- Product 1 -->
+          <article class="product-card" role="listitem" aria-label="Aromatic Candle Gift Box">
+            <img src="./images/candle.png"
+                 alt="Aromatic candle in a decorative box" width="600" height="400">
+            <h3 class="product-name">Aromatic Candle Gift Box</h3>
+            <p class="price">₹899</p>
+            <button class="btn add-to-cart" aria-label="Add Aromatic Candle Gift Box to cart">Add to Cart</button>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card" role="listitem" aria-label="Personalized Coffee Mug">
+            <img src="./images/mug.png"
+                 alt="White personalized coffee mug with text" width="600" height="400">
+            <h3 class="product-name">Personalized Coffee Mug</h3>
+            <p class="price">₹499</p>
+            <button class="btn add-to-cart" aria-label="Add Personalized Coffee Mug to cart">Add to Cart</button>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card" role="listitem" aria-label="Luxury Chocolate Basket">
+            <img src="./images/chocolate.png"
+                 alt="Assorted luxury chocolates in a basket" width="600" height="400">
+            <h3 class="product-name">Luxury Chocolate Basket</h3>
+            <p class="price">₹1299</p>
+            <button class="btn add-to-cart" aria-label="Add Luxury Chocolate Basket to cart">Add to Cart</button>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card" role="listitem" aria-label="Handmade Flower Bouquet">
+            <img src="./images/flower.png"
+                 alt="Hand-tied flower bouquet with mixed blooms" width="600" height="400">
+            <h3 class="product-name">Handmade Flower Bouquet</h3>
+            <p class="price">₹699</p>
+            <button class="btn add-to-cart" aria-label="Add Handmade Flower Bouquet to cart">Add to Cart</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Aside: Special Offers -->
+      <aside id="offers" class="sidebar" role="complementary" aria-labelledby="offers-heading">
+        <h2 id="offers-heading" class="sidebar-title">Special Offers</h2>
+
+        <div class="offer-card" tabindex="0"> <strong>Buy 1 Get 1 Free</strong> — select items</div>
+        <div class="offer-card" tabindex="0"> <strong>Flat 20% Off</strong> on hampers</div>
+        <div class="offer-card" tabindex="0"> <strong>Free Shipping</strong> on orders above ₹999</div>
+
+        <div class="festival-banner" role="note" aria-label="Upcoming festival sale">
+           <strong>Upcoming Festival Sale:</strong> Diwali Delights — Up to <em>50% off</em>!
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+        <span class="sep">|</span>
+        <a href="#" aria-label="Terms and Conditions">Terms &amp; Conditions</a>
+      </div>
+
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:support@giftify.com">support@giftify.com</a> | Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+      </div>
+
+      <div class="newsletter" aria-label="Newsletter signup">
+        <form action="#" method="post" class="newsletter-form" aria-label="Subscribe to newsletter">
+          <label for="footer-email" class="visually-hidden">Email address</label>
+          <input id="footer-email" type="email" name="email" placeholder="your@email.com" required>
+          <button type="submit" class="btn submit">Subscribe</button>
+        </form>
+      </div>
+
+      <div class="social-links" aria-label="Social media">
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <span class="sep">|</span>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <span class="sep">|</span>
+        <a href="#" aria-label="Twitter">Twitter</a>
+      </div>
+
+      <p class="copyright">© 2025 Giftify — All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

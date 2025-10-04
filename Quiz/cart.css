@@ -1,0 +1,247 @@
+/* ========================
+   Cart Page Styles
+   ======================== */
+
+/* ---------- Base Styles ---------- */
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: #faf9fc;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ---------- Hero Section ---------- */
+.hero {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image:
+    linear-gradient(rgba(35, 192, 216, 0.45), rgba(38, 147, 242, 0.45));
+    background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 48px 16px;
+}
+
+.hero-content {
+  max-width: 900px;
+  animation: fadeInUp 0.9s ease both;
+}
+
+.hero-title {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(12px);}
+  to {opacity: 1; transform: none;}
+}
+
+/* ---------- Section Titles ---------- */
+.section-title {
+  font-family: "Merriweather", serif;
+  font-size: 1.5rem;
+  color: #8A2C6A;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ---------- Cart Grid ---------- */
+.cart-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ---------- Cart Card ---------- */
+.cart-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  gap: 12px;
+}
+
+.cart-card img {
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cart-details .product-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cart-details .price {
+  font-weight: 500;
+  color: #8A2C6A;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  background: #8A2C6A;
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s;
+}
+
+.qty-btn:hover {
+  background: #C76BA0;
+}
+
+.quantity input {
+  width: 50px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+/* Remove button */
+.btn.remove-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.btn.remove-btn:hover {
+  background: #ff4d6d;
+  transform: translateY(-2px);
+}
+
+/* ---------- Cart Summary ---------- */
+.cart-summary {
+  background: #f7e8f1;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-summary p {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.cart-summary strong {
+  font-weight: 700;
+  color: #8A2C6A;
+}
+
+.cart-summary .checkout {
+  background: #8A2C6A;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.cart-summary .checkout:hover {
+  background: #C76BA0;
+  transform: translateY(-2px);
+}
+
+/* ---------- Responsive Layouts ---------- */
+@media(min-width: 901px) {
+  .cart-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .cart-card {
+    flex-direction: row;
+  }
+
+  .cart-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .cart-details {
+    flex: 1;
+  }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #8A2C6A;
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form input[type=email] {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 8px;
+}
+
+.newsletter-form button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #C76BA0;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background: #8A2C6A;
+}
