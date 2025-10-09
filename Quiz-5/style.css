@@ -1,0 +1,150 @@
+   /* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+header .search-bar {
+    flex: 1;
+    display: flex;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+header .search-bar input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px 0 0 2px;
+    outline: none;
+}
+
+header .search-bar button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-left: none;
+    background-color: #eee;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+}
+
+header .profile img {
+    border-radius: 50%;
+}
+
+/* Container styling */
+.container {
+    display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #f2f2f2;
+}
+
+/* Main content styling */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    margin-bottom: 15px;
+}
+
+/* Videos Grid */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.video-card h3 {
+    font-size: 1rem;
+    margin: 8px 0 4px;
+}
+
+.video-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    header .search-bar {
+        margin: 10px 0;
+    }
+}
